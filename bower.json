@@ -1,0 +1,14 @@
+{
+  "name": "tap-house",
+  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/angular/quickstart",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
