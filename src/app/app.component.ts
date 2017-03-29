@@ -9,6 +9,7 @@ import { Brew } from './brew.model';
     <brew-list [childBrewList]="masterBrewList" (clickSender)="editBrew($event)"></brew-list>
       <hr>
       <edit-brew [childSelectedBrew]="selectedBrew" (doneButtonClickedSender)="finishedEditing()"></edit-brew>
+      <new-brew (newBrewSender)="addBrew($event)"></new-brew>
   </div>
   `
 })
@@ -26,5 +27,9 @@ export class AppComponent  {
 
   finishedEditing() {
     this.selectedBrew = null;
+  }
+
+  addBrew(newBrewFromChild: Brew) {
+    this.masterBrewList.push(newBrewFromChild);
   }
 }

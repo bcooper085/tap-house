@@ -4,14 +4,15 @@ import { AppComponent }   from './app.component';
 import { FormsModule }   from '@angular/forms';
 import { BrewListComponent }  from './brew-list.component';
 import { EditBrewComponent } from './edit-brew.component';
+import { NewBrewComponent } from './new-brew.component';
 
 @NgModule({
   imports: [ BrowserModule,
                   FormsModule ],
   declarations: [ AppComponent,
                   BrewListComponent,
-                  EditBrewComponent
-                ],
+                  EditBrewComponent,
+                  NewBrewComponent],
   bootstrap:    [ AppComponent ]
 })
 
