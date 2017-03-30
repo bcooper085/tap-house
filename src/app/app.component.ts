@@ -6,7 +6,7 @@ import { Brew } from './brew.model';
   template: `
    <div class="container">
     <div class="jumbotron">
-      <h2>Brew House</h2>
+      <h1>Brew House</h1>
     </div>
     <h1>Brews on Tap</h1>
     <brew-list [childBrewList]="masterBrewList" (clickSender)="editBrew($event)"></brew-list>

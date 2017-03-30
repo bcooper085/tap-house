@@ -10,8 +10,8 @@ import { Brew } from './brew.model';
     </select>
   <ul>
     <li *ngFor="let currentBrew of childBrewList | fullness:filterByAvailable">Name: {{currentBrew.name}} <br> Brand: {{currentBrew.brand}} <br> Price: {{currentBrew.price}} <br> <span [class]="priorityColor(currentBrew)">Alchohol Content: {{currentBrew.alcoholContent}}%</span> <br> <span [class]="dangerLow(currentBrew)"> Available Pints: {{currentBrew.pint}}</span>
-    <input *ngIf="currentBrew.pint > 0" type="button" (click)="removePint(currentBrew, 1)" value="Serve">
-    <button (click)="editButtonClicked(currentBrew)">Edit!</button><hr></li>
+    <input *ngIf="currentBrew.pint > 0" type="button" (click)="removePint(currentBrew, 1)" value="Serve" class="btn btn-primary">
+    <button class="btn btn-success" (click)="editButtonClicked(currentBrew)">Edit!</button><hr></li>
   </ul>
   `
 })
@@ -43,11 +43,11 @@ export class BrewListComponent {
 
    priorityColor(currentBrew: Brew){
       if (currentBrew.alcoholContent > 7){
-        return "highAlcohol";
+        return "bg-danger";
       } else if (currentBrew.alcoholContent < 3.5) {
-        return  "lowAlcohol";
+        return  "bg-success";
       } else {
-        return "alcohol";
+        return "bg-warning";
       }
     }
 }
