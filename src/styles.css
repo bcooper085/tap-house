@@ -10,3 +10,7 @@ li {
   font-size: 30px;
   list-style: none;
 }
+
+.bg-danger {
+  color: red;
+}

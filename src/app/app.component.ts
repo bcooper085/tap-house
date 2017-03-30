@@ -5,6 +5,9 @@ import { Brew } from './brew.model';
   selector: 'app-root',
   template: `
    <div class="container">
+    <div class="jumbotron">
+      <h2>Brew House</h2>
+    </div>
     <h1>Brews on Tap</h1>
     <brew-list [childBrewList]="masterBrewList" (clickSender)="editBrew($event)"></brew-list>
       <edit-brew [childSelectedBrew]="selectedBrew" (doneButtonClickedSender)="finishedEditing()"></edit-brew>
