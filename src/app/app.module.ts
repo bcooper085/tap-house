@@ -5,7 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { BrewListComponent }  from './brew-list.component';
 import { EditBrewComponent } from './edit-brew.component';
 import { NewBrewComponent } from './new-brew.component';
-import { CompletenessPipe } from './completeness.pipe';
+import { FullnessPipe } from './fullness.pipe';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -14,7 +14,7 @@ import { CompletenessPipe } from './completeness.pipe';
                   BrewListComponent,
                   EditBrewComponent,
                   NewBrewComponent,
-                  CompletenessPipe],
+                  FullnessPipe],
   bootstrap:    [ AppComponent ]
 })
 

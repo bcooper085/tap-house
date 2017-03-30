@@ -5,24 +5,33 @@ import { Brew } from './brew.model';
   selector: 'brew-list',
   template: `
   <select (change)="onChange($event.target.value)">
-      <option value=1 selected="selected">One pint</option>
-      <option value=2>Two pints</option>
-      <option value=3>3 pints</option>
+      <option value="available">Available</option>
+      <option value="notAvailable">Not Available</option>
     </select>
   <ul>
-    <li *ngFor="let currentBrew of childBrewList | completeness">Name: {{currentBrew.name}} <br> Brand: {{currentBrew.brand}} <br> Price: {{currentBrew.price}} <br> Alchohol Content: {{currentBrew.alcoholContent}} <button (click)="editButtonClicked(currentBrew)">Edit!</button></li>
+    <li *ngFor="let currentBrew of childBrewList | fullness:filterByAvailable">Name: {{currentBrew.name}} <br> Brand: {{currentBrew.brand}} <br> Price: {{currentBrew.price}} <br> Alchohol Content: {{currentBrew.alcoholContent}} <br>Available Pints: {{currentBrew.pint}}
+    <input *ngIf="currentBrew.pint > 0" type="button" (click)="removePint(currentBrew, 1)" value="Serve">
+    <button (click)="editButtonClicked(currentBrew)">Edit!</button><hr></li>
   </ul>
   `
 })
 
 export class BrewListComponent {
+  filterByAvailable: string = "available";
 
   @Input() childBrewList: Brew[];
   @Output() clickSender = new EventEmitter();
 
-  removePint: number = "1";
 
   editButtonClicked(brewToEdit: Brew) {
     this.clickSender.emit(brewToEdit);
   }
+
+  onChange(optionFromMenu: string) {
+    this.filterByAvailable = optionFromMenu;
+  }
+
+  removePint(clickedBrew: Brew, setFullness: number) {
+     clickedBrew.pint -= setFullness;
+   }
 }

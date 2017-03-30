@@ -7,7 +7,6 @@ import { Brew } from './brew.model';
    <div class="container">
     <h1>Brews on Tap</h1>
     <brew-list [childBrewList]="masterBrewList" (clickSender)="editBrew($event)"></brew-list>
-      <hr>
       <edit-brew [childSelectedBrew]="selectedBrew" (doneButtonClickedSender)="finishedEditing()"></edit-brew>
       <new-brew (newBrewSender)="addBrew($event)"></new-brew>
   </div>
