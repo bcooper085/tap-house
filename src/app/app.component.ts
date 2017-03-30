@@ -19,8 +19,8 @@ export class AppComponent  {
   selectedBrew: Brew = null;
 
   masterBrewList: Brew[] = [
-    new Brew('beer', 'beer company', '$6', '5.4%'),
-    new Brew('beer for you', 'beer company', '$25', '18.4%')
+    new Brew('beer', 'beer company', '$6', 5.4),
+    new Brew('beer for you', 'beer company', '$25', 18.4)
   ];
 
   editBrew(clickedBrew: Brew) {

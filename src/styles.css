@@ -5,7 +5,6 @@ h1 {
 }
 
 li {
-  color: #369;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   list-style: none;
@@ -13,4 +12,16 @@ li {
 
 .bg-danger {
   color: red;
+}
+
+.highAlcohol {
+  background-color: red;
+}
+
+.lowAlcohol {
+  background-color: green;
+}
+
+.alcohol {
+  background-color: orange;
 }
